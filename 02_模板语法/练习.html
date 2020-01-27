@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>1 双大括号表达式 | 插值</h2>
+        <p> --{{msg}}---</p>
+        <p> ---{{msg.toUpperCase()}}---</p>
+
+
+        <h2>2 指令一：强制数据绑定</h2>
+        <a href="url">去学习</a><br>
+        <a v-bind:href="url">去学习</a><br>
+        <a :href="url">去学习</a><br>
+
+        <h2>3 指令二：绑定监听事件</h2>
+        <button v-on:click="text">text1</button>
+        <button @click="text">text1</button>  
+    </div>
+
+
+    <script src="../js/vue.js"></script>
+    <script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg: 'I Will Back!',
+            url: 'http://www.atguigu.com'
+        },
+        methods:{
+            text(event){
+              alert(event.target.innerText)
+            }
+        }
+    })
+    </script>
+</body>
+</html>
